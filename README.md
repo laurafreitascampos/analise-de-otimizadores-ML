@@ -23,9 +23,6 @@ python run_experiment.py SGD Adam SGD-PID Adam-PID   # ~7 min em 1 CPU
 python make_figs.py
 python make_efficiency.py
 ```
-Compilar o artigo no Overleaf: criar projeto, subir artigo.tex e as 3 figuras .png,
-compilador pdfLaTeX.
-
 ## Métricas de eficiência
 - **Tempo de computo** e **FLOPs**: medidos diretamente em core.py.
 - **Energia (kWh) e CO2 (g)**: estimados com CodeCarbon, usando o fator de
