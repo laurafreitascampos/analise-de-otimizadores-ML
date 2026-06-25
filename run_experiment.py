@@ -6,6 +6,7 @@ estimativa de energia/CO2 (via codecarbon, com fator de emissao do Brasil).
 import sys, os, json, time
 import numpy as np
 import core
+import conv  # além de core
 
 # Fator de emissao da rede eletrica BRASILEIRA (matriz limpa, muita hidro).
 # ~0,12 kg CO2 / kWh. (Media mundial fica perto de 0,475.) Ajuste se desejar.
@@ -17,9 +18,14 @@ try:
 except Exception:
     HAS_CC = False
 
-d = np.load("mnist.npz")
-data = (d["x_train"], d["y_train"], d["x_test"], d["y_test"])
+d = np.load("cifar10.npz")
+mean = np.array([0.4914, 0.4822, 0.4465], np.float32).reshape(1, 3, 1, 1)
+std  = np.array([0.2470, 0.2435, 0.2616], np.float32).reshape(1, 3, 1, 1)
+def prep(x): return (x.astype(np.float32) / 255.0 - mean) / std
+data = (prep(d["x_train"]), d["y_train"], prep(d["x_test"]), d["y_test"])
+
 EPOCHS, BATCH = 10, 128
+
 
 cfgs = {
     "SGD":      lambda p: core.SGD(p, lr=0.1),
@@ -38,7 +44,7 @@ for name in names:
                                    log_level="error")
         tracker.start()
 
-    h = core.train(cfgs[name], data, epochs=EPOCHS, batch=BATCH, seed=0)
+    h = conv.train(cfgs[name], data, epochs=EPOCHS, batch=BATCH, seed=0, max_train=None)
 
     if tracker is not None:
         tracker.stop()
