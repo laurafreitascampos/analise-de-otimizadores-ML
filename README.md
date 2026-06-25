@@ -6,7 +6,6 @@ Código em NumPy puro: cada regra de atualização é escrita diretamente a part
 das equações de controle dos artigos de referência.
 
 ## Arquivos
-- `artigo.tex` / `artigo.pdf` — artigo no formato IEEE (para o Overleaf)
 - `fig_curvas.png`, `fig_convergencia.png`, `fig_eficiencia.png` — figuras
 - `core.py`            — MLP + os 4 otimizadores + laço de treino (mede tempo e FLOPs)
 - `run_experiment.py`  — treina os otimizadores e mede energia (CodeCarbon); salva results.json
