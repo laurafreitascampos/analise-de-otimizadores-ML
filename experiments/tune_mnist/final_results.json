@@ -1,0 +1,191 @@
+{
+  "note": "val_mean/val_std = acuracia de TESTE; energia medida com CodeCarbon (CPU+GPU), CO2 no fator BR 0.12 kg/kWh",
+  "energia_medida": true,
+  "final_test": [
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.0 lr0.05",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.0,
+        "lr": 0.05
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "accs": [
+        98.36,
+        98.27,
+        98.37,
+        98.4,
+        98.47
+      ],
+      "val_mean": 98.374,
+      "val_std": 0.07231873892705971,
+      "ep_mean": 1.0,
+      "ep_std": 0.0,
+      "time_per_run_s": 4.871360521399401,
+      "time_to_target_s": 0.5811416049997206,
+      "energy_kwh_total": 0.00040220654089248207,
+      "energy_wh_per_run": 0.08044130817849642,
+      "co2_g_total": 0.048264784907097846,
+      "co2_g_per_run": 0.00965295698141957,
+      "avg_power_w": 47.71779345979046,
+      "energy_wh_to_target": 0.009596454776395664,
+      "co2_g_to_target": 0.0011515745731674797
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.5 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.5,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "accs": [
+        98.44000000000001,
+        98.06,
+        98.39,
+        98.09,
+        98.36
+      ],
+      "val_mean": 98.268,
+      "val_std": 0.1788015659886694,
+      "ep_mean": 1.0,
+      "ep_std": 0.0,
+      "time_per_run_s": 5.035762241799967,
+      "time_to_target_s": 0.6984860263997689,
+      "energy_kwh_total": 0.0004226196407853075,
+      "energy_wh_per_run": 0.0845239281570615,
+      "co2_g_total": 0.050714356894236895,
+      "co2_g_per_run": 0.010142871378847378,
+      "avg_power_w": 48.799402136342046,
+      "energy_wh_to_target": 0.011723901939624295,
+      "co2_g_to_target": 0.0014068682327549153
+    },
+    {
+      "tag": "AdamPID Kp0.0 Ki0.5 Kd0.3",
+      "params": {
+        "form": "adam_pid",
+        "Kp": 0.0,
+        "Ki": 0.5,
+        "Kd": 0.3,
+        "lr": 0.001
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "accs": [
+        98.00999999999999,
+        97.71,
+        98.05,
+        98.00999999999999,
+        98.18
+      ],
+      "val_mean": 97.99199999999999,
+      "val_std": 0.17239489551608328,
+      "ep_mean": 1.0,
+      "ep_std": 0.0,
+      "time_per_run_s": 5.650724179600365,
+      "time_to_target_s": 0.6852067198000441,
+      "energy_kwh_total": 0.00047672649992976524,
+      "energy_wh_per_run": 0.09534529998595305,
+      "co2_g_total": 0.05720717999157183,
+      "co2_g_per_run": 0.011441435998314365,
+      "avg_power_w": 49.43883910470362,
+      "energy_wh_to_target": 0.011561569486540836,
+      "co2_g_to_target": 0.0013873883383849002
+    },
+    {
+      "tag": "SGD (artigo) lr0.1 m0",
+      "params": {
+        "form": "sgd",
+        "lr": 0.1,
+        "m": 0.0
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "accs": [
+        97.96000000000001,
+        97.72,
+        98.02,
+        97.96000000000001,
+        97.95
+      ],
+      "val_mean": 97.922,
+      "val_std": 0.11627553482999019,
+      "ep_mean": 2.0,
+      "ep_std": 0.0,
+      "time_per_run_s": 3.050174934798997,
+      "time_to_target_s": 0.8209055218001595,
+      "energy_kwh_total": 0.00024292160304659077,
+      "energy_wh_per_run": 0.04858432060931815,
+      "co2_g_total": 0.02915059236559089,
+      "co2_g_per_run": 0.005830118473118178,
+      "avg_power_w": 43.76412731427044,
+      "energy_wh_to_target": 0.013075688415794687,
+      "co2_g_to_target": 0.0015690826098953624
+    },
+    {
+      "tag": "Adam lr0.002",
+      "params": {
+        "form": "adam",
+        "lr": 0.002
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "accs": [
+        97.75,
+        97.86,
+        97.88,
+        97.74000000000001,
+        97.83
+      ],
+      "val_mean": 97.812,
+      "val_std": 0.06379655163094232,
+      "ep_mean": 1.0,
+      "ep_std": 0.0,
+      "time_per_run_s": 4.122965480200946,
+      "time_to_target_s": 0.5172442318005779,
+      "energy_kwh_total": 0.0003474072505829189,
+      "energy_wh_per_run": 0.06948145011658377,
+      "co2_g_total": 0.041688870069950264,
+      "co2_g_per_run": 0.008337774013990053,
+      "avg_power_w": 47.36767806080502,
+      "energy_wh_to_target": 0.008716754836421998,
+      "co2_g_to_target": 0.0010460105803706398
+    },
+    {
+      "tag": "SGD-mom (nosso) lr0.1 m0.9",
+      "params": {
+        "form": "sgd",
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "accs": [
+        97.69,
+        97.11999999999999,
+        97.59,
+        97.44,
+        97.91
+      ],
+      "val_mean": 97.55,
+      "val_std": 0.29487285395573715,
+      "ep_mean": 1.4,
+      "ep_std": 0.5477225575051661,
+      "time_per_run_s": 3.23641915259941,
+      "time_to_target_s": 0.6297058446001756,
+      "energy_kwh_total": 0.00026702828526342827,
+      "energy_wh_per_run": 0.05340565705268565,
+      "co2_g_total": 0.03204339423161139,
+      "co2_g_per_run": 0.006408678846322279,
+      "avg_power_w": 45.699499413062895,
+      "energy_wh_to_target": 0.01039106889284662,
+      "co2_g_to_target": 0.0012469282671415944
+    }
+  ]
+}

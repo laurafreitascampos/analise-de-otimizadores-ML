@@ -21,3 +21,10 @@ __pycache__/
 # Dados baixados (recriados por baixar_mnist.py)
 mnist.npz
 mnist_dl.bin
+
+data/
+*.npz
+*.tar.gz
+*.log
+venv/
+__pycache__/

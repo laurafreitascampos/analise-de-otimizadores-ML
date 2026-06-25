@@ -1,0 +1,140 @@
+{
+  "best_kp": 0.0,
+  "best_ki": 0.5,
+  "kd_grid": [
+    0.0,
+    0.1,
+    0.3,
+    0.5
+  ],
+  "results": [
+    {
+      "tag": "AdamPID Kp0.0 Ki0.5 Kd0.3",
+      "params": {
+        "form": "adam_pid",
+        "Kp": 0.0,
+        "Ki": 0.5,
+        "Kd": 0.3,
+        "lr": 0.001
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "n_div": 0,
+      "accs": [
+        97.89999999999999,
+        97.78999999999999,
+        97.7,
+        97.8,
+        98.2
+      ],
+      "val_mean": 97.878,
+      "val_std": 0.19344249791604887,
+      "ep_to_target": [
+        2,
+        2,
+        1,
+        1,
+        2
+      ],
+      "ep_mean": 1.6,
+      "ep_std": 0.5477225575051661,
+      "n_reached": 5
+    },
+    {
+      "tag": "AdamPID Kp0.0 Ki0.5 Kd0.5",
+      "params": {
+        "form": "adam_pid",
+        "Kp": 0.0,
+        "Ki": 0.5,
+        "Kd": 0.5,
+        "lr": 0.001
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "n_div": 0,
+      "accs": [
+        97.78999999999999,
+        97.92,
+        97.77,
+        97.78,
+        98.04
+      ],
+      "val_mean": 97.86,
+      "val_std": 0.11768602295940256,
+      "ep_to_target": [
+        2,
+        2,
+        2,
+        1,
+        2
+      ],
+      "ep_mean": 1.8,
+      "ep_std": 0.4472135954999579,
+      "n_reached": 5
+    },
+    {
+      "tag": "AdamPID Kp0.0 Ki0.5 Kd0.0",
+      "params": {
+        "form": "adam_pid",
+        "Kp": 0.0,
+        "Ki": 0.5,
+        "Kd": 0.0,
+        "lr": 0.001
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "n_div": 0,
+      "accs": [
+        97.76,
+        97.68,
+        97.8,
+        97.78,
+        98.2
+      ],
+      "val_mean": 97.844,
+      "val_std": 0.20415680248279694,
+      "ep_to_target": [
+        2,
+        2,
+        2,
+        1,
+        2
+      ],
+      "ep_mean": 1.8,
+      "ep_std": 0.4472135954999579,
+      "n_reached": 5
+    },
+    {
+      "tag": "AdamPID Kp0.0 Ki0.5 Kd0.1",
+      "params": {
+        "form": "adam_pid",
+        "Kp": 0.0,
+        "Ki": 0.5,
+        "Kd": 0.1,
+        "lr": 0.001
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "n_div": 0,
+      "accs": [
+        97.78999999999999,
+        97.66,
+        97.8,
+        97.58,
+        98.05
+      ],
+      "val_mean": 97.776,
+      "val_std": 0.17868967513541428,
+      "ep_to_target": [
+        2,
+        2,
+        1,
+        1,
+        2
+      ],
+      "ep_mean": 1.6,
+      "ep_std": 0.5477225575051661,
+      "n_reached": 5
+    }
+  ]
+}

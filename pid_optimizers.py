@@ -182,3 +182,61 @@ class Adam_PID(Optimizer):
                 p.add_(D, alpha=-Kd * Dhat_scale)        # theta -= Kd * Dhat
 
         return loss
+
+
+class SGD_PID_Classic(Optimizer):
+    r"""
+    Original An et al. (2018) form of PID-over-SGD, ported verbatim from the
+    NumPy core.py used in Phase 1:
+
+        V_t = alpha*V_{t-1} - lr*g_t                       # momentum buffer (P+I fused)
+        D_t = alpha*D_{t-1} + (1-alpha)*(g_t - g_{t-1})    # smoothed derivative
+        theta_{t+1} = theta_t + V_t + Kd*D_t
+
+    Key difference from SGD_PID (the separated three-gain form): here lr lives
+    INSIDE the momentum buffer V, and the derivative term is NOT scaled by lr.
+    This is the faithful tensorboy/PIDOptimizer parameterization. The two
+    classes are reparameterizations of the same update family, so the SAME
+    numeric Kd means a different magnitude in each -- do not compare gains
+    across forms directly; compare each form at its own best.
+    """
+
+    def __init__(self, params, lr=0.1, alpha=0.9, Kd=0.5, weight_decay=0.0):
+        if lr < 0.0:
+            raise ValueError(f"Invalid learning rate: {lr}")
+        defaults = dict(lr=lr, alpha=alpha, Kd=Kd, weight_decay=weight_decay)
+        super().__init__(params, defaults)
+
+    @torch.no_grad()
+    def step(self, closure=None):
+        loss = None
+        if closure is not None:
+            with torch.enable_grad():
+                loss = closure()
+
+        for group in self.param_groups:
+            lr = group['lr']
+            alpha = group['alpha']
+            Kd = group['Kd']
+            wd = group['weight_decay']
+
+            for p in group['params']:
+                if p.grad is None:
+                    continue
+                g = p.grad
+                if wd != 0.0:
+                    g = g.add(p, alpha=wd)
+
+                state = self.state[p]
+                if len(state) == 0:
+                    state['V'] = torch.zeros_like(p)
+                    state['D'] = torch.zeros_like(p)
+                    state['prev_grad'] = torch.zeros_like(p)
+
+                V, D, prev_grad = state['V'], state['D'], state['prev_grad']
+                V.mul_(alpha).add_(g, alpha=-lr)                    # V = alpha*V - lr*g
+                D.mul_(alpha).add_(g - prev_grad, alpha=(1.0 - alpha))
+                prev_grad.copy_(g)
+                p.add_(V).add_(D, alpha=Kd)                        # theta += V + Kd*D
+
+        return loss

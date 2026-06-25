@@ -1,0 +1,935 @@
+{
+  "separated_ranked": [
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.5 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.5,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.29
+      ],
+      "val_mean": 98.29,
+      "val_std": 0.0,
+      "ep_to_target": [
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.5 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.5,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.22999999999999
+      ],
+      "val_mean": 98.22999999999999,
+      "val_std": 0.0,
+      "ep_to_target": [
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.5 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.5,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.22999999999999
+      ],
+      "val_mean": 98.22999999999999,
+      "val_std": 0.0,
+      "ep_to_target": [
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.5 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.5,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.22
+      ],
+      "val_mean": 98.22,
+      "val_std": 0.0,
+      "ep_to_target": [
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.5 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.5,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.21
+      ],
+      "val_mean": 98.21,
+      "val_std": 0.0,
+      "ep_to_target": [
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.5 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.5,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.21
+      ],
+      "val_mean": 98.21,
+      "val_std": 0.0,
+      "ep_to_target": [
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.5 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.5,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.2
+      ],
+      "val_mean": 98.2,
+      "val_std": 0.0,
+      "ep_to_target": [
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.5 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.5,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.19
+      ],
+      "val_mean": 98.19,
+      "val_std": 0.0,
+      "ep_to_target": [
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.0 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.0,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.95
+      ],
+      "val_mean": 97.95,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.0 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.0,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.94
+      ],
+      "val_mean": 97.94,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.0 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.0,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.92
+      ],
+      "val_mean": 97.92,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.0 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.0,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.92
+      ],
+      "val_mean": 97.92,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki1.0 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 1.0,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.58
+      ],
+      "val_mean": 97.58,
+      "val_std": 0.0,
+      "ep_to_target": [
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.0 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.0,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.57000000000001
+      ],
+      "val_mean": 97.57000000000001,
+      "val_std": 0.0,
+      "ep_to_target": [
+        3
+      ],
+      "ep_mean": 3.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.0 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.0,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.56
+      ],
+      "val_mean": 97.56,
+      "val_std": 0.0,
+      "ep_to_target": [
+        3
+      ],
+      "ep_mean": 3.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.0 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.0,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.56
+      ],
+      "val_mean": 97.56,
+      "val_std": 0.0,
+      "ep_to_target": [
+        3
+      ],
+      "ep_mean": 3.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.0 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.0,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.55
+      ],
+      "val_mean": 97.55,
+      "val_std": 0.0,
+      "ep_to_target": [
+        3
+      ],
+      "ep_mean": 3.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki1.0 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 1.0,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.55
+      ],
+      "val_mean": 97.55,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki1.0 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 1.0,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.5
+      ],
+      "val_mean": 97.5,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki1.0 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 1.0,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.49
+      ],
+      "val_mean": 97.49,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki1.0 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 1.0,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.47
+      ],
+      "val_mean": 97.47,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki1.0 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 1.0,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.3
+      ],
+      "val_mean": 97.3,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki1.0 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 1.0,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.03
+      ],
+      "val_mean": 97.03,
+      "val_std": 0.0,
+      "ep_to_target": [
+        3
+      ],
+      "ep_mean": 3.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki1.0 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 1.0,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        96.72
+      ],
+      "val_mean": 96.72,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    }
+  ],
+  "classic_ranked": [
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.0 lr0.05",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.0,
+        "lr": 0.05
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.25
+      ],
+      "val_mean": 98.25,
+      "val_std": 0.0,
+      "ep_to_target": [
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.3 lr0.05",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.3,
+        "lr": 0.05
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.21
+      ],
+      "val_mean": 98.21,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.5 lr0.05",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.5,
+        "lr": 0.05
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        98.19
+      ],
+      "val_mean": 98.19,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.0 lr0.01",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.0,
+        "lr": 0.01
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.89
+      ],
+      "val_mean": 97.89,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.3 lr0.01",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.3,
+        "lr": 0.01
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.86
+      ],
+      "val_mean": 97.86,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.3 lr0.1",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.3,
+        "lr": 0.1
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.76
+      ],
+      "val_mean": 97.76,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.0 lr0.1",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.0,
+        "lr": 0.1
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.54
+      ],
+      "val_mean": 97.54,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.5 lr0.1",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.5,
+        "lr": 0.1
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        97.2
+      ],
+      "val_mean": 97.2,
+      "val_std": 0.0,
+      "ep_to_target": [
+        2
+      ],
+      "ep_mean": 2.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd1.0 lr0.1",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 1.0,
+        "lr": 0.1
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        96.24000000000001
+      ],
+      "val_mean": 96.24000000000001,
+      "val_std": 0.0,
+      "ep_to_target": [
+        8
+      ],
+      "ep_mean": 8.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd1.0 lr0.05",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 1.0,
+        "lr": 0.05
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        86.77
+      ],
+      "val_mean": 86.77,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.5 lr0.01",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.5,
+        "lr": 0.01
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        12.709999999999999
+      ],
+      "val_mean": 12.709999999999999,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd1.0 lr0.01",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 1.0,
+        "lr": 0.01
+      },
+      "diverged": true
+    }
+  ],
+  "confirmed": [
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.0 lr0.05",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.0,
+        "lr": 0.05
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "n_div": 0,
+      "accs": [
+        98.25,
+        98.39,
+        98.25,
+        98.28,
+        98.17
+      ],
+      "val_mean": 98.268,
+      "val_std": 0.07949842765740689,
+      "ep_to_target": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": 0.0,
+      "n_reached": 5
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.5 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.5,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "n_div": 0,
+      "accs": [
+        98.29,
+        98.13,
+        98.11,
+        97.98,
+        98.2
+      ],
+      "val_mean": 98.14200000000001,
+      "val_std": 0.1147606204235593,
+      "ep_to_target": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "ep_mean": 1.0,
+      "ep_std": 0.0,
+      "n_reached": 5
+    }
+  ]
+}
