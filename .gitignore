@@ -1,30 +1,7 @@
-# Ambiente virtual
-venv/
-.venv/
-env/
-
-# Cache Python
-__pycache__/
-*.pyc
-
-# Config local do editor
-.vscode/
-
-# Artefatos de compilacao LaTeX
-*.aux
-*.log
-*.out
-*.synctex.gz
-*.fls
-*.fdb_latexmk
-
-# Dados baixados (recriados por baixar_mnist.py)
-mnist.npz
-mnist_dl.bin
-
 data/
 *.npz
 *.tar.gz
+*.pt
 *.log
 venv/
 __pycache__/
