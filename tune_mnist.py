@@ -34,7 +34,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from compare_mnist_mlp import make_mlp, set_seed, evaluate, MNIST_MEAN, MNIST_STD
+from compare_mnist_mlp import (make_mlp, set_seed, evaluate, load_full, DATASETS,
+                               MNIST_MEAN, MNIST_STD)
 from pid_optimizers import SGD_PID, SGD_PID_Classic, Adam_PID
 
 # Fator de emissao da rede eletrica brasileira (matriz limpa, muita hidro).
@@ -47,39 +48,31 @@ except Exception:
 
 
 # ------------------------------- data -------------------------------------- #
-def load_mnist_with_val(data_dir, device, val_size=10000, split_seed=0):
-    """Train(60k) -> train(50k)+val(10k). Test kept separate and untouched."""
-    import torchvision
-    tr = torchvision.datasets.MNIST(data_dir, train=True, download=True)
-    te = torchvision.datasets.MNIST(data_dir, train=False, download=True)
-
-    def prep(ds):
-        x = ds.data.float().div(255.0).sub(MNIST_MEAN).div(MNIST_STD)
-        return x.view(x.size(0), -1).to(device), ds.targets.to(device)
-
-    Xtr_all, Ytr_all = prep(tr)
-    Xte, Yte = prep(te)
+def load_data_with_val(dataset, data_dir, device, val_size=10000, split_seed=0):
+    """Train -> train+val split; test kept separate and untouched.
+    Returns (train, val, test, num_classes)."""
+    (Xtr_all, Ytr_all), (Xte, Yte), num_classes = load_full(dataset, data_dir, device)
 
     g = torch.Generator().manual_seed(split_seed)
     perm = torch.randperm(Xtr_all.size(0), generator=g)
     val_idx, tr_idx = perm[:val_size], perm[val_size:]
     Xtr, Ytr = Xtr_all[tr_idx], Ytr_all[tr_idx]
     Xval, Yval = Xtr_all[val_idx], Ytr_all[val_idx]
-    return (Xtr, Ytr), (Xval, Yval), (Xte, Yte)
+    return (Xtr, Ytr), (Xval, Yval), (Xte, Yte), num_classes
 
 
 # ----------------------- train one config, eval on val -------------------- #
 def train_eval(opt_factory, train, val, hidden, epochs, batch, seed,
-               target, clip, device):
+               target, clip, device, num_classes=10):
     Xtr, Ytr = train
     Xval, Yval = val
     set_seed(seed)
-    model = make_mlp(hidden).to(device)
+    model = make_mlp(hidden, num_classes).to(device)
     opt = opt_factory(model.parameters())
     crit = nn.CrossEntropyLoss()
     N = Xtr.size(0)
 
-    val_curve, ep_to_target, diverged = [], None, False
+    val_curve, loss_curve, ep_to_target, diverged = [], [], None, False
     cum, cum_time, time_to_target = 0.0, [], None
     for epoch in range(epochs):
         model.train()
@@ -103,15 +96,17 @@ def train_eval(opt_factory, train, val, hidden, epochs, batch, seed,
             torch.cuda.synchronize()
         cum += time.perf_counter() - t0          # training compute only (excl. eval)
         cum_time.append(cum)
-        _, va = evaluate(model, Xval, Yval, crit)
+        vl, va = evaluate(model, Xval, Yval, crit)
         val_curve.append(va)
+        loss_curve.append(vl)
         if ep_to_target is None and va >= target:
             ep_to_target = epoch + 1
             time_to_target = cum
 
     return {'val_acc': (val_curve[-1] if val_curve else float('nan')),
-            'val_curve': val_curve, 'ep_to_target': ep_to_target,
-            'diverged': diverged, 'total_time': (cum_time[-1] if cum_time else 0.0),
+            'val_curve': val_curve, 'loss_curve': loss_curve,
+            'ep_to_target': ep_to_target, 'diverged': diverged,
+            'total_time': (cum_time[-1] if cum_time else 0.0),
             'time_to_target': time_to_target}
 
 
@@ -129,7 +124,8 @@ def run_configs(configs, data, args, seeds, label, eval_split='val'):
         accs, eps, div = [], [], 0
         for s in seeds:
             r = train_eval(factory, train, val, args.hidden, args.epochs,
-                           args.batch, s, args.target, args.clip, args.device)
+                           args.batch, s, args.target, args.clip, args.device,
+                           args.num_classes)
             if r['diverged'] or not math.isfinite(r['val_acc']):
                 div += 1
                 continue
@@ -285,9 +281,20 @@ def run_final_with_energy(configs, data, args, seeds):
     consistent with make_efficiency.py."""
     train, test = data[0], data[2]
     measure = args.energy and HAS_CC
+
+    def agg_curve(curves):
+        curves = [c for c in curves if c]
+        if not curves:
+            return None
+        n = min(len(c) for c in curves)
+        arr = np.array([c[:n] for c in curves])
+        return {'mean': arr.mean(0).tolist(),
+                'std': arr.std(0).tolist() if arr.shape[0] > 1 else [0.0] * n}
+
     out = []
     for tag, factory, params in configs:
         accs, eps, tot_times, ttt_times = [], [], [], []
+        acc_curves, loss_curves = [], []
         tracker = None
         if measure:
             tracker = EmissionsTracker(measure_power_secs=1, save_to_file=False,
@@ -295,13 +302,16 @@ def run_final_with_energy(configs, data, args, seeds):
             tracker.start()
         for s in seeds:
             r = train_eval(factory, train, test, args.hidden, args.epochs,
-                           args.batch, s, args.target, args.clip, args.device)
+                           args.batch, s, args.target, args.clip, args.device,
+                           args.num_classes)
             if r['diverged'] or not math.isfinite(r['val_acc']):
                 continue
             accs.append(r['val_acc'] * 100)
             eps.append(r['ep_to_target'])
             tot_times.append(r['total_time'])
             ttt_times.append(r['time_to_target'])
+            acc_curves.append([a * 100 for a in r['val_curve']])   # test acc (%) per epoch
+            loss_curves.append(r['loss_curve'])                    # test loss per epoch
         energy_kwh = power_w = co2_g = None
         if tracker is not None:
             tracker.stop()
@@ -323,7 +333,9 @@ def run_final_with_energy(configs, data, args, seeds):
                'ep_std': float(np.std(reached, ddof=1)) if len(reached) > 1 else None,
                'time_per_run_s': float(np.mean(tot_times)),
                'time_to_target_s': (float(np.nanmean([t for t in ttt_times if t is not None]))
-                                    if any(t is not None for t in ttt_times) else None)}
+                                    if any(t is not None for t in ttt_times) else None),
+               'acc_curve': agg_curve(acc_curves),
+               'loss_curve': agg_curve(loss_curves)}
         if energy_kwh is not None:
             rec['energy_kwh_total'] = energy_kwh
             rec['energy_wh_per_run'] = energy_kwh * 1000.0 / n
@@ -413,7 +425,8 @@ def main():
     p.add_argument('--epochs', type=int, default=8, help='orcamento por config (ranking se preserva)')
     p.add_argument('--batch', type=int, default=100)
     p.add_argument('--hidden', type=int, default=1000)
-    p.add_argument('--target', type=float, default=0.96, help='alvo (frac) p/ epocas-ate-alvo')
+    p.add_argument('--target', type=float, default=None,
+                   help='alvo (frac) p/ epocas-ate-alvo; auto por dataset se omitido')
     p.add_argument('--clip', type=float, default=0.0)
     p.add_argument('--topk', type=int, default=3)
     p.add_argument('--seeds', type=int, nargs='+', default=[0, 1, 2, 3, 4])
@@ -424,21 +437,32 @@ def main():
     p.add_argument('--adam-lr-grid', type=float, nargs='+', default=[1e-3, 2e-3, 3e-3, 5e-3])
     p.add_argument('--sgd-lr', type=float, default=0.1)
     p.add_argument('--momentum', type=float, default=0.9)
+    p.add_argument('--dataset', choices=list(DATASETS), default='mnist',
+                   help='mnist | fashion | emnist (todos 28x28, MLP identica)')
     p.add_argument('--data-dir', default='./data')
-    p.add_argument('--out-dir', default='./experiments/tune_mnist')
+    p.add_argument('--out-dir', default=None,
+                   help='default: ./experiments/tune_<dataset>')
     p.add_argument('--energy', action='store_true', default=True,
                    help='medir energia/CO2 na fase final (CodeCarbon)')
     p.add_argument('--no-energy', dest='energy', action='store_false',
                    help='desliga a medicao de energia')
     args = p.parse_args()
 
+    if args.out_dir is None:
+        args.out_dir = f'./experiments/tune_{args.dataset}'
     os.makedirs(args.out_dir, exist_ok=True)
     args.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"Device: {args.device}  | val split 50k/10k | test intocado")
+    print(f"Device: {args.device}  | dataset: {args.dataset} | out: {args.out_dir}")
     t0 = time.time()
-    data = load_mnist_with_val(args.data_dir, args.device)
+    train, val, test, num_classes = load_data_with_val(
+        args.dataset, args.data_dir, args.device)
+    data = (train, val, test)
+    args.num_classes = num_classes
+    # per-dataset default target (MNIST saturates ~98%, Fashion ~88-90%, EMNIST ~80%)
+    if args.target is None:
+        args.target = {'mnist': 0.96, 'fashion': 0.87, 'emnist': 0.78}[args.dataset]
     print(f"train {tuple(data[0][0].shape)}  val {tuple(data[1][0].shape)}  "
-          f"test {tuple(data[2][0].shape)}")
+          f"test {tuple(data[2][0].shape)}  | classes {num_classes} | alvo {args.target}")
 
     if args.phase in ('grid', 'all'):
         ranked, _ = phase_grid(data, args)

@@ -35,6 +35,37 @@ from pid_optimizers import SGD_PID, Adam_PID
 
 MNIST_MEAN, MNIST_STD = 0.1307, 0.3081
 
+# Per-dataset normalization + class count. All are 28x28 grayscale -> 784,
+# so the MLP pipeline is identical; only mean/std/classes change.
+DATASETS = {
+    'mnist':   {'cls': 'MNIST',        'mean': 0.1307, 'std': 0.3081, 'classes': 10},
+    'fashion': {'cls': 'FashionMNIST', 'mean': 0.2860, 'std': 0.3530, 'classes': 10},
+    'emnist':  {'cls': 'EMNIST',       'mean': 0.1751, 'std': 0.3332, 'classes': 47,
+                'split': 'balanced'},
+}
+
+
+def load_full(name, data_dir, device):
+    """Load a dataset fully into device memory as flat normalized tensors.
+    Returns (Xtr,Ytr), (Xte,Yte), num_classes. (EMNIST .data is stored in a
+    transposed orientation, but since the MLP flattens to a vector that is just
+    a fixed permutation of inputs and does not affect learnability.)"""
+    import torchvision
+    spec = DATASETS[name]
+    cls = getattr(torchvision.datasets, spec['cls'])
+    kw = {'split': spec['split']} if 'split' in spec else {}
+    train = cls(data_dir, train=True, download=True, **kw)
+    test = cls(data_dir, train=False, download=True, **kw)
+    mean, std = spec['mean'], spec['std']
+
+    def prep(ds):
+        x = ds.data.float().div(255.0).sub(mean).div(std)
+        x = x.view(x.size(0), -1).to(device)
+        y = ds.targets.to(device)
+        return x, y
+
+    return prep(train), prep(test), spec['classes']
+
 
 # ----------------------------- reproducibility ----------------------------- #
 def set_seed(seed):
@@ -45,29 +76,20 @@ def set_seed(seed):
 
 
 # ------------------------------- model ------------------------------------- #
-def make_mlp(hidden=1000):
-    """784 -> hidden (ReLU) -> 10. softmax is folded into CrossEntropyLoss."""
+def make_mlp(hidden=1000, num_classes=10):
+    """784 -> hidden (ReLU) -> num_classes. softmax folded into CrossEntropyLoss."""
     return nn.Sequential(
         nn.Linear(28 * 28, hidden),
         nn.ReLU(),
-        nn.Linear(hidden, 10),
+        nn.Linear(hidden, num_classes),
     )
 
 
 # ------------------------------- data -------------------------------------- #
 def load_mnist_to_device(data_dir, device):
-    """Load MNIST fully into device memory as flat, normalized tensors."""
-    import torchvision
-    train = torchvision.datasets.MNIST(data_dir, train=True, download=True)
-    test = torchvision.datasets.MNIST(data_dir, train=False, download=True)
-
-    def prep(ds):
-        x = ds.data.float().div_(255.0).sub_(MNIST_MEAN).div_(MNIST_STD)
-        x = x.view(x.size(0), -1).to(device)          # (N, 784)
-        y = ds.targets.to(device)                     # (N,)
-        return x, y
-
-    return prep(train), prep(test)
+    """Back-compat wrapper: MNIST only. Prefer load_full(name, ...)."""
+    (Xtr, Ytr), (Xte, Yte), _ = load_full('mnist', data_dir, device)
+    return (Xtr, Ytr), (Xte, Yte)
 
 
 # ----------------------------- optimizer factory --------------------------- #

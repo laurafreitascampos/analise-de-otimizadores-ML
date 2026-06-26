@@ -1,0 +1,935 @@
+{
+  "separated_ranked": [
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.0 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.0,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.85
+      ],
+      "val_mean": 88.85,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.0 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.0,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.84
+      ],
+      "val_mean": 88.84,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.0 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.0,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.78
+      ],
+      "val_mean": 88.78,
+      "val_std": 0.0,
+      "ep_to_target": [
+        3
+      ],
+      "ep_mean": 3.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.0 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.0,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.75999999999999
+      ],
+      "val_mean": 88.75999999999999,
+      "val_std": 0.0,
+      "ep_to_target": [
+        3
+      ],
+      "ep_mean": 3.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.5 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.5,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.44999999999999
+      ],
+      "val_mean": 88.44999999999999,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.0 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.0,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.42999999999999
+      ],
+      "val_mean": 88.42999999999999,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.0 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.0,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.4
+      ],
+      "val_mean": 88.4,
+      "val_std": 0.0,
+      "ep_to_target": [
+        7
+      ],
+      "ep_mean": 7.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.0 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.0,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.4
+      ],
+      "val_mean": 88.4,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.0 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.0,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.35
+      ],
+      "val_mean": 88.35,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.5 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.5,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.31
+      ],
+      "val_mean": 88.31,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.5 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.5,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.29
+      ],
+      "val_mean": 88.29,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.5 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.5,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.03999999999999
+      ],
+      "val_mean": 88.03999999999999,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.5 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.5,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        87.99
+      ],
+      "val_mean": 87.99,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.5 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.5,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        87.94
+      ],
+      "val_mean": 87.94,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.5 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.5,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        87.94
+      ],
+      "val_mean": 87.94,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki0.5 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 0.5,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        87.92
+      ],
+      "val_mean": 87.92,
+      "val_std": 0.0,
+      "ep_to_target": [
+        4
+      ],
+      "ep_mean": 4.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki1.0 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 1.0,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        87.21
+      ],
+      "val_mean": 87.21,
+      "val_std": 0.0,
+      "ep_to_target": [
+        8
+      ],
+      "ep_mean": 8.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki1.0 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 1.0,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        87.13
+      ],
+      "val_mean": 87.13,
+      "val_std": 0.0,
+      "ep_to_target": [
+        8
+      ],
+      "ep_mean": 8.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki1.0 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 1.0,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        86.89
+      ],
+      "val_mean": 86.89,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki1.0 Kd0.3",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 1.0,
+        "Kd": 0.3,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        86.81
+      ],
+      "val_mean": 86.81,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki1.0 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 1.0,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        86.56
+      ],
+      "val_mean": 86.56,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-sep Kp0.5 Ki1.0 Kd0.5",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 0.5,
+        "Ki": 1.0,
+        "Kd": 0.5,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        86.38
+      ],
+      "val_mean": 86.38,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki1.0 Kd0.0",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 1.0,
+        "Kd": 0.0,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        86.11
+      ],
+      "val_mean": 86.11,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki1.0 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 1.0,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        85.84
+      ],
+      "val_mean": 85.84,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    }
+  ],
+  "classic_ranked": [
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.0 lr0.01",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.0,
+        "lr": 0.01
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        88.73
+      ],
+      "val_mean": 88.73,
+      "val_std": 0.0,
+      "ep_to_target": [
+        3
+      ],
+      "ep_mean": 3.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.3 lr0.01",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.3,
+        "lr": 0.01
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        87.94999999999999
+      ],
+      "val_mean": 87.94999999999999,
+      "val_std": 0.0,
+      "ep_to_target": [
+        8
+      ],
+      "ep_mean": 8.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.0 lr0.05",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.0,
+        "lr": 0.05
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        87.71
+      ],
+      "val_mean": 87.71,
+      "val_std": 0.0,
+      "ep_to_target": [
+        7
+      ],
+      "ep_mean": 7.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.3 lr0.05",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.3,
+        "lr": 0.05
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        87.1
+      ],
+      "val_mean": 87.1,
+      "val_std": 0.0,
+      "ep_to_target": [
+        8
+      ],
+      "ep_mean": 8.0,
+      "ep_std": null,
+      "n_reached": 1
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.0 lr0.1",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.0,
+        "lr": 0.1
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        86.11999999999999
+      ],
+      "val_mean": 86.11999999999999,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.5 lr0.05",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.5,
+        "lr": 0.05
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        83.96000000000001
+      ],
+      "val_mean": 83.96000000000001,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.3 lr0.1",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.3,
+        "lr": 0.1
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        81.2
+      ],
+      "val_mean": 81.2,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.5 lr0.1",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.5,
+        "lr": 0.1
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        78.12
+      ],
+      "val_mean": 78.12,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd1.0 lr0.1",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 1.0,
+        "lr": 0.1
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        44.95
+      ],
+      "val_mean": 44.95,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.5 lr0.01",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.5,
+        "lr": 0.01
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        37.88
+      ],
+      "val_mean": 37.88,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd1.0 lr0.05",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 1.0,
+        "lr": 0.05
+      },
+      "diverged": false,
+      "n_seeds": 1,
+      "n_div": 0,
+      "accs": [
+        32.43
+      ],
+      "val_mean": 32.43,
+      "val_std": 0.0,
+      "ep_to_target": [
+        null
+      ],
+      "ep_mean": null,
+      "ep_std": null,
+      "n_reached": 0
+    },
+    {
+      "tag": "SGDPID-classic a0.9 Kd1.0 lr0.01",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 1.0,
+        "lr": 0.01
+      },
+      "diverged": true
+    }
+  ],
+  "confirmed": [
+    {
+      "tag": "SGDPID-classic a0.9 Kd0.0 lr0.01",
+      "params": {
+        "form": "sgd_classic",
+        "alpha": 0.9,
+        "Kd": 0.0,
+        "lr": 0.01
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "n_div": 0,
+      "accs": [
+        88.73,
+        88.55,
+        88.4,
+        88.48,
+        88.22
+      ],
+      "val_mean": 88.476,
+      "val_std": 0.1879627622695526,
+      "ep_to_target": [
+        3,
+        5,
+        4,
+        3,
+        4
+      ],
+      "ep_mean": 3.8,
+      "ep_std": 0.8366600265340756,
+      "n_reached": 5
+    },
+    {
+      "tag": "SGDPID-sep Kp1.0 Ki0.0 Kd0.1",
+      "params": {
+        "form": "sgd_sep",
+        "Kp": 1.0,
+        "Ki": 0.0,
+        "Kd": 0.1,
+        "lr": 0.1,
+        "m": 0.9
+      },
+      "diverged": false,
+      "n_seeds": 5,
+      "n_div": 0,
+      "accs": [
+        88.85,
+        88.35,
+        87.53999999999999,
+        88.57000000000001,
+        88.14999999999999
+      ],
+      "val_mean": 88.292,
+      "val_std": 0.494388511193376,
+      "ep_to_target": [
+        4,
+        4,
+        4,
+        5,
+        3
+      ],
+      "ep_mean": 4.0,
+      "ep_std": 0.7071067811865476,
+      "n_reached": 5
+    }
+  ]
+}
